@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+      "target": "ESNext",
+      "useDefineForClassFields": true,
+      "module": "ESNext",
+      "moduleResolution": "Bundler", // Or "Node" if you prefer older resolution style
+      "strict": true,
+      "jsx": "preserve", // Important for Vue if you ever use JSX, though <template> is standard
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "esModuleInterop": true,
+      "lib": ["ESNext", "DOM"],
+      "skipLibCheck": true,
+      "noEmit": true, // Vite handles the emitting, tsc is just for type checking
+      "baseUrl": ".", // Allows absolute imports from src using paths
+      "paths": {
+        "@/*": ["src/*"] // Alias for src directory
+      },
+      "types": ["vite/client"] // Includes Vite client types for env variables etc.
+    },
+    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.ts"],
+    "references": [{ "path": "./tsconfig.node.json" }] // Important for Vite tooling
+  }

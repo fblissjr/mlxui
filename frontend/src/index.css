@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-100 dark:bg-dark-bg text-gray-900 dark:text-dark-text-primary font-sans antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-dark-surface rounded-md;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-md;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-500;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-md font-medium text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-dark-bg transition-colors duration-150;
+}
+.btn-primary {
+  @apply bg-primary text-white hover:bg-primary-dark focus:ring-primary;
+}
+.btn-secondary {
+  @apply bg-gray-200 dark:bg-dark-border text-gray-800 dark:text-dark-text-primary hover:bg-gray-300 dark:hover:bg-gray-600 focus:ring-gray-400;
+}
+.btn-danger {
+  @apply bg-red-600 text-white hover:bg-red-700 focus:ring-red-500;
+}
+.btn:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+  @apply block w-full px-3 py-2 border border-gray-300 dark:border-dark-border rounded-md shadow-sm
+         bg-white dark:bg-dark-surface text-gray-900 dark:text-dark-text-primary
+         placeholder-gray-400 dark:placeholder-gray-500
+         focus:ring-primary focus:border-primary sm:text-sm;
+}
