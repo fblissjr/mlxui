@@ -38,27 +38,33 @@ DEFAULT_CONFIG = {
     "app": {
         "host": "127.0.0.1",
         "port": 8000,
-        "reload_backend_on_change": False,
+        "reload_backend_on_change": False,  # Renamed for clarity
     },
     "models": {
         "scan_directories": [str(DEFAULT_MODELS_SCAN_DIR)],
-        "default_model_identifier": None, # e.g., "mlx-community/abc-model"
+        "default_model_identifier": None,
         "cache_directory": str(DEFAULT_KV_CACHE_DIR),
     },
-    "generation": {
-        "default_max_tokens": 512,
-        "default_temp": 0.6,
-        "default_top_p": 0.9,
-        "default_top_k": 50,
-        "default_repetition_penalty": 1.1,
-        "default_repetition_context_size": 25,
-        "default_seed": -1, # -1 for random
+    "generation": {  # These become the source of truth for API defaults if not provided in request
+        "default_max_tokens": 4096,
+        "default_temp": 1.0,
+        "default_top_p": 0.95,
+        "default_top_k": 0,  # mlx-lm default is 0 (disabled)
+        "default_min_p": 0.0,
+        "default_min_tokens_to_keep": 1,
+        "default_repetition_penalty": 1.0,  # No penalty default
+        "default_repetition_context_size": 20,
+        "default_xtc_probability": 0.0,
+        "default_xtc_threshold": 0.0,
+        "default_extra_eos_tokens": [],
+        "default_ignore_chat_template": False,
+        "default_seed": -1,  # -1 or None typically means random
     },
     "performance": {
         "enabled": True,
-        "history_size": 120, # Number of data points for charts
-        "update_interval_ms": 2000, # How often backend pushes perf updates
-    }
+        "history_size": 120,
+        "update_interval_ms": 2000,
+    },
 }
 
 class Config:
