@@ -1,0 +1,1 @@
+from .core.mlx_adapter import MLXAdapter, get_mlx_adapter # Re-export for convenience

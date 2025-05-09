@@ -1,2 +1,2 @@
 # mlxui
-a local llm playground and UI workbench specifically for mlx-lm on apple silicon
+mlx and mlx-lm LLM and multimodal playground and experimental workbench UI for apple silicon / macos
